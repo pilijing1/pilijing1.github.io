@@ -1,41 +1,108 @@
-<!doctype html>
-<html lang="zh">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
-<body>
-<div class="htmleaf-container">
-	<div class="wrapper">
-		<div class="container">
-			<h1>生日快乐</h1>
+
+<!-- saved from url=(0105)http://www.17sucai.com/preview/570623/2016-07-10/%E4%BC%9A%E8%B7%91%E7%9A%84%E9%80%89%E6%8B%A9/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>You must love me</title>
+
+<meta name="copyright" content="http://www.javascriptbank.com">
+
+<style>
+	input{
+		border: none;
+		padding: 5px 20px;
+		outline: none;
+		cursor: pointer;
+	}
+	.heart {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -150px;
+				margin-top: -135px;
+				width: 300px;
+				height: 270px;
+				background: transparent;
+				/*box-shadow: 2px 2px 5px #000;*/
+				filter: drop-shadow(0px 0px 20px rgb(255, 20, 20));
+				animation: test 1s linear infinite;
+			}
 			
-			<form class="form" action="BirthdayCake.html">
-				<input id="userName" name="userName" type="text" placeholder="姓名 全名">
-				<input id="pwd" name="pwd" type="password" placeholder="密码 xx-xx-xx">
-				<button type="submit" id="login-button" >进入</button>
-			</form>
-		</div>
+			.heart:before,
+			.heart:after {
+				content: "";
+				position: absolute;
+				left: 150px;
+				width: 150px;
+				height: 240px;
+				background: rgb(255, 0, 0);
+				border-radius: 150px 150px 0 0;
+				transform: rotate(-45deg);
+				transform-origin: 0 100%;
+			}
+			
+			.heart:after {
+				left: 0;
+				transform: rotate(45deg);
+				transform-origin: 100% 100%;
+			}
+</style>
+
+<script type="text/javascript">
+function f1(){
+	document.getElementById('box').style.display = 'block'
+} 
+var flag=1;
+function f(){ 
+	var Bn = document.getElementById('Bn');
+	var aWidth= document.body.clientWidth || document.documentElement.clientWidth;
+	var aHeight= document.body.clientHeight || document.documentElement.clientHeight;
+	var sJs1=Math.floor(Math.random()*aHeight);
+	var sJs2=Math.floor(Math.random()*aWidth);
+	if(flag==1){
+		Bn.style.top=sJs1 + 'px';
+		Bn.style.left=sJs2+'px'; 
+		flag=2;
 		
-		<ul class="bg-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+	}else if(flag==2){
+		Bn.style.top=sJs1+'px';
+		Bn.style.left=sJs2+'px';
+		flag=3;
+	}else if(flag==3){
+	Bn.style.top=260 + 'px';
+		Bn.style.left=286 + 'px';
+		flag=4;
+	}else if(flag==4){
+		Bn.style.top=260 + 'px';
+		Bn.style.left=380 + 'px';
+		flag=1;
+	}
+}
+function f2(){
+		alert('你竟然点到了，厉害');
+	}
+function f3(){
+	document.getElementById('box').style.display = 'none'
+}
+ </script>
+</head>
+
+<body>
+<div style="position: relative;">
+	<h1 style="position:absolute; left:220px; top:175px; width:auto; color: red; height:210px;">钟羽，你喜欢我吗?</h1>
+	<div id="By" style="position:absolute; left:285px; top:260px;">
+		<input type="button" value="喜欢" onclick="f1()" style="padding: 5px 25px;">
+	</div>
+	<div id="Bn" style="position:absolute; left:380px; top:260px;">
+		<input type="button" value="不喜欢" onmouseover="f()" onclick="f2()">
+	</div>
+	<div id="box" style="position: absolute; display: none; background: #E6CE88; width: 300px; height: 350px; top: 150px; left: 210px; text-align: center; padding: 10px 10px 0 10px;">
+		<p style="font-weight: 600;">我也喜欢你！</p>
+		<div class="heart"></div>
+		<div style="position: absolute; top: 333px; right: 15px; cursor: pointer;" onclick="f3()">关闭</div>
 	</div>
 </div>
 
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
 
 </body>
+
 </html>
